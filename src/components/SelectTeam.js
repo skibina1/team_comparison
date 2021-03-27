@@ -21,7 +21,7 @@ function SelectTeam(props) {
   function handleClick(item) {
     console.log(item)
     setTeam(item.team)
-    props.setTeamA(item.team)
+    props.setTeam(item.team)
   }
 
   return (
@@ -44,7 +44,7 @@ function SelectTeam(props) {
 
 SelectTeam.propTypes = {
   teams: PropTypes.array,
-  setTeamA: PropTypes.func
+  setTeam: PropTypes.func
 }
 
 export default SelectTeam

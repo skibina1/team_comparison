@@ -9,7 +9,7 @@ const teams = [
 ]
 
 function App() {
-  const [teamA, setTeamA] = useState('dupa')
+  const [teamA, setTeamA] = useState(null)
   const [teamB, setTeamB] = useState(null)
 
   // useEffect( async () => {
@@ -23,11 +23,16 @@ function App() {
       <div>
         <SelectTeam 
           teams={teams}
-          setTeamA={setTeamA}
+          setTeam={setTeamA}
         />        
+        {teamA}
       </div>
       <div>
-        {teamA}
+        <SelectTeam 
+          teams={teams}
+          setTeam={setTeamB}
+        />        
+        {teamB}
       </div>
     </div>
   )
