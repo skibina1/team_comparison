@@ -40,7 +40,18 @@ function App() {
           setTeam={setTeamB}
         />        
         {teamB}
-      </div>     
+      </div> 
+      <div>
+        <ProgressBar/>
+      </div>    
+    </div>
+  )
+}
+
+const ProgressBar = (/*{ children }*/) => {
+  return (
+    <div className="progress-bar" >
+      {/* {children} */}
     </div>
   )
 }
