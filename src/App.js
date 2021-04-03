@@ -5,7 +5,8 @@ import { getData } from './util'
 
 const teams = [
   { team: 'Black Widow' },
-  { team: 'Young Lions'}
+  { team: 'Young Lions'},
+  { team: 'Siema'}
 ]
 
 function App() {
@@ -17,6 +18,12 @@ function App() {
   //   console.log(response)
   //   setText(JSON.stringify(response))
   // }, [])
+
+  useEffect(() => {
+    if(teamA && teamB){
+      console.log('both vars have value')
+    }
+  }, [teamA, teamB])
   
   return (
     <div className="App">
@@ -33,7 +40,7 @@ function App() {
           setTeam={setTeamB}
         />        
         {teamB}
-      </div>
+      </div>     
     </div>
   )
 }

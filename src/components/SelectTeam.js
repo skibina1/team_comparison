@@ -19,14 +19,12 @@ function SelectTeam(props) {
   }
 
   function handleClick(item) {
-    console.log(item)
     setTeam(item.team)
     props.setTeam(item.team)
   }
 
   return (
     <div>
-      {console.log(props)}
       <Select 
         items={props.teams}
         filterable={false}
@@ -34,7 +32,7 @@ function SelectTeam(props) {
         onItemSelect={handleClick}
       >
         <Button
-          text={team == null ? props.teams[0].team : team}
+          text={team == null ? 'Wybierz Zespol' : team}
           rightIcon="caret-down"
         />
       </Select>            
