@@ -7,4 +7,17 @@ async function getData(team1, team2) {
   return response
 }
 
-export { getData }
+function calculateTeamStats(matches, team1, team2){
+  let team1win, team2win
+  matches.forEach(match => {
+    //console.log(match)
+    if((match.home_team === team1 && match.home_result > 45) || (match.away_team === team1 && match.away_result > 45)){
+      team1win =+ 1
+    }
+    if((match.home_team === team2 && match.home_result > 45) || (match.away_team === team1 && match.away_result > 45)){
+      team2win =+ 1
+    }    
+  })
+}
+
+export { getData, calculateTeamStats }

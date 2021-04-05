@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import SelectTeam from './components/SelectTeam'
-import { getData } from './util'
+import { calculateTeamStats, getData } from './util'
 
 const teams = [
   { team: 'Black Widow' },
@@ -16,7 +16,8 @@ function App() {
 
   useEffect( async () => {
     if(teamA && teamB){
-      console.log(await getData(teamA, teamB))
+      //console.log(await getData(teamA, teamB))
+      calculateTeamStats(await getData(teamA, teamB))
       //setResponse(JSON.stringify(await getData(teamA, teamB)))
     }
   }, [teamA, teamB])
