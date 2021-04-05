@@ -6,22 +6,18 @@ import { getData } from './util'
 const teams = [
   { team: 'Black Widow' },
   { team: 'Young Lions'},
-  { team: 'Siema'}
+  { team: 'Nie wybieraj'}
 ]
 
 function App() {
   const [teamA, setTeamA] = useState(null)
   const [teamB, setTeamB] = useState(null)
+  const [response, setResponse] = useState(null)
 
-  // useEffect( async () => {
-  //   let response = await getData('Black Widow', 'Young Lions')
-  //   console.log(response)
-  //   setText(JSON.stringify(response))
-  // }, [])
-
-  useEffect(() => {
+  useEffect( async () => {
     if(teamA && teamB){
-      console.log('both vars have value')
+      console.log(await getData(teamA, teamB))
+      //setResponse(JSON.stringify(await getData(teamA, teamB)))
     }
   }, [teamA, teamB])
   
@@ -43,6 +39,7 @@ function App() {
       </div> 
       <div>
         <ProgressBar/>
+        {response}
       </div>    
     </div>
   )
