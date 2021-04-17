@@ -17,7 +17,7 @@ function App() {
   useEffect( async () => {
     if(teamA && teamB){
       const {team1result, team2result, draw} = calculateTeamStats(await getData(teamA, teamB), teamA, teamB)
-      setResponse(`team1: ${team1result}, team2: ${team2result}, draw: ${draw}, `)
+      setResponse(`${teamA}: ${team1result}, ${teamB}: ${team2result}, draw: ${draw}, `)
     }
   }, [teamA, teamB])
   
