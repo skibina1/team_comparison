@@ -25,9 +25,6 @@ function calculateTeamStats(matches, team1, team2){
     team2result: team2win,
     draw: draw
   }
-  // console.log(`Zespół ${team1}: ${team1win}`)    
-  // console.log(`Zespół ${team2}: ${team2win}`)  
-  // console.log(`Remis: ${draw}`)
 }
 
 export { getData, calculateTeamStats }
