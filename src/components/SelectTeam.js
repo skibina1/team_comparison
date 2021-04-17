@@ -32,7 +32,7 @@ function SelectTeam(props) {
         onItemSelect={handleClick}
       >
         <Button
-          text={team == null ? 'Wybierz Zespol' : team}
+          text={team == null ? 'Wybierz Zespół' : team}
           rightIcon="caret-down"
         />
       </Select>            

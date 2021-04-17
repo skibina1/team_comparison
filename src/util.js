@@ -8,16 +8,26 @@ async function getData(team1, team2) {
 }
 
 function calculateTeamStats(matches, team1, team2){
-  let team1win, team2win
+  let team1win = 0, team2win = 0, draw = 0
   matches.forEach(match => {
-    //console.log(match)
-    if((match.home_team === team1 && match.home_result > 45) || (match.away_team === team1 && match.away_result > 45)){
-      team1win =+ 1
+    if((match.HOME_TEAM === team1 && match.HOME_RESULT > match.AWAY_RESULT) || (match.AWAY_TEAM === team1 && match.AWAY_RESULT > match.HOME_RESULT)){
+      team1win += 1
     }
-    if((match.home_team === team2 && match.home_result > 45) || (match.away_team === team1 && match.away_result > 45)){
-      team2win =+ 1
+    if((match.HOME_TEAM === team2 && match.HOME_RESULT > match.AWAY_RESULT) || (match.AWAY_TEAM === team2 && match.AWAY_RESULT > match.HOME_RESULT)){
+      team2win += 1
+    }
+    if(match.HOME_RESULT === match.AWAY_RESULT){
+      draw += 1
     }    
   })
+  return {
+    team1result: team1win,
+    team2result: team2win,
+    draw: draw
+  }
+  // console.log(`Zespół ${team1}: ${team1win}`)    
+  // console.log(`Zespół ${team2}: ${team2win}`)  
+  // console.log(`Remis: ${draw}`)
 }
 
 export { getData, calculateTeamStats }
