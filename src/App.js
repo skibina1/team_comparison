@@ -40,15 +40,13 @@ function App() {
         <SelectTeam 
           teams={teams}
           setTeam={setTeamA}
-        />        
-        {teamA}
+        /> 
       </div>
       <div>
         <SelectTeam 
           teams={teams}
           setTeam={setTeamB}
-        />        
-        {teamB}
+        />     
       </div> 
       <div>
         <ProgressBar>
