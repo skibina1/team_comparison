@@ -37,25 +37,42 @@ function App() {
   return (
     <div className="App">
       <div>
-        <SelectTeam 
-          teams={teams}
-          setTeam={setTeamA}
-        /> 
+      </div>    
+      <div className="header-middle">
+        KUPA
       </div>
       <div>
-        <SelectTeam 
-          teams={teams}
-          setTeam={setTeamB}
-        />     
-      </div> 
-      <div>
-        <ProgressBar>
-          <ProgressMeter value={results.teamAwin/results.sum} color='orange'/>
-          <ProgressMeter value={results.draw/results.sum} color='#ced2d6' />
-          <ProgressMeter value={1 - (results.teamAwin+results.draw)/results.sum} color='blue' />
-        </ProgressBar>
-        {response}
-      </div>    
+      </div>
+      <div className="left">
+        <div>
+          <SelectTeam 
+            teams={teams}
+            setTeam={setTeamA}
+          /> 
+        </div>
+      </div>      
+      <div className="center">
+        <div className="progress-bar-container">
+          <div>10</div>
+          <div>
+            <ProgressBar>
+              <ProgressMeter value={results.teamAwin/results.sum} color='orange'/>
+              <ProgressMeter value={results.draw/results.sum} color='#ced2d6' />
+              <ProgressMeter value={1 - (results.teamAwin+results.draw)/results.sum} color='blue' />
+            </ProgressBar>
+            {response}
+          </div>
+          <div>12</div>
+        </div>        
+      </div>
+      <div className="right">
+        <div>
+          <SelectTeam 
+            teams={teams}
+            setTeam={setTeamB}
+          />     
+        </div> 
+      </div>      
     </div>
   )
 }
