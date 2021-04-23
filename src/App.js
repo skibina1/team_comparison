@@ -19,21 +19,20 @@ function App() {
   let [results, setResults] = useState({
     sum: 0,
     teamAwin: 0,
-    teamBwin: 0
+    teamBwin: 0,
+    draw: 0
   })
 
   useEffect( async () => {
     if(teamA && teamB){
       const {team1result, team2result, draw} = calculateTeamStats(await getData(teamA, teamB), teamA, teamB)
-      // teamAwin = team1result
-      // teamBwin = team2result
-      // sum = teamAwin + teamBwin
       setResponse(`${teamA}: ${team1result}, ${teamB}: ${team2result}, draw: ${draw}, `)
       setResults(results = {
         sum: team1result + team2result,
         teamAwin: team1result,
-        teamBwin: team2result
-      })
+        teamBwin: 1,
+        draw: 1
+      })     
     }
   }, [teamA, teamB])
   
@@ -56,7 +55,8 @@ function App() {
       <div>
         <ProgressBar>
           <ProgressMeter value={results.teamAwin/results.sum} color='orange' />
-          <ProgressMeter value={1 - results.teamAwin/results.sum} color='blue' />
+          <ProgressMeter value={results.draw/results.sum} color='#ced2d6' />
+          <ProgressMeter value={1 - (results.teamAwin+results.draw)/results.sum} color='blue' />
         </ProgressBar>
         {response}
       </div>    
