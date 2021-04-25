@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Select } from '@blueprintjs/select'
 import { Button, MenuItem, Label } from '@blueprintjs/core'
 import PropTypes from 'prop-types'
+import '../style/SelectTeam.css'
 
 function SelectTeam(props) {
   const [team, setTeam] = useState(null)  
@@ -25,13 +26,14 @@ function SelectTeam(props) {
 
   return (
     <div>
-      <Select 
+      <Select
         items={props.teams}
         filterable={false}
         itemRenderer={itemRenderer}
         onItemSelect={handleClick}
       >
         <Button
+          className="select-button"
           text={team == null ? 'Wybierz Zespół' : team}
           rightIcon="caret-down"
         />
