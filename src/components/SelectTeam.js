@@ -24,15 +24,8 @@ function SelectTeam(props) {
     props.setTeam(item.HOME_TEAM)
   }
 
-  function filterTeams(query, team, _index, exactMatch) {
-    const normalizedTitle = team.HOME_TEAM.toLowerCase()
-    const normalizedQuery = query.toLowerCase()
-
-    if (exactMatch) {
-      return normalizedTitle === normalizedQuery
-    } else {
-      return `${team.HOME_TEAM}`.toLowerCase().indexOf(normalizedQuery) >= 0
-    }    
+  function filterTeams(query, team) {
+    return `${team.HOME_TEAM}`.toLowerCase().indexOf(query.toLowerCase()) >= 0   
   }
 
   return (
@@ -48,6 +41,7 @@ function SelectTeam(props) {
           className="select-button"
           text={team == null ? 'Wybierz Zespół' : team}
           rightIcon="caret-down"
+          disabled={true}
         />
       </Select>            
     </div>

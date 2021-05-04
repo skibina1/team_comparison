@@ -14,13 +14,13 @@ html, body, #root, .App{
 
 .left{
   display: grid;
-  align-items: center;
+  align-items: start;
   justify-items: center;
 }
 
 .right{
   display: grid;
-  align-items: center;
+  align-items: start;
   justify-items: center;
 }
 
@@ -28,14 +28,15 @@ html, body, #root, .App{
   display: grid;
   /* grid-template-columns: 1fr; */
   /* grid-template-rows: 100vh; */
-  align-items: center;
-  justify-items: center;
 }
 
 .progress-bar-container{
   display: grid;
   grid-template-columns: 15% auto 15%;
   width: 100%;
+  border-color: red;
+  align-self: start;
+  text-align: center;
 }
 
 .progress-bar .progress-meter{ 

@@ -4,6 +4,8 @@ import SelectTeam from './components/SelectTeam'
 import { ProgressBar, ProgressMeter } from './components/ProgressBar'
 import { calculateTeamStats, getData, getTeams } from './util'
 
+const team222 = []
+
 function App() {
   const [teamA, setTeamA] = useState(null)
   const [teamB, setTeamB] = useState(null)
@@ -59,10 +61,12 @@ function App() {
               <ProgressMeter value={results.draw/results.sum} color='#ced2d6' />
               <ProgressMeter value={1 - (results.teamAwin+results.draw)/results.sum} color='blue' />
             </ProgressBar>
-            {response}
           </div>
           <div>12</div>
-        </div>        
+          <div></div>  
+          <div>{response}</div>  
+          <div></div>
+        </div>      
       </div>
       <div className="right">
         <div>
