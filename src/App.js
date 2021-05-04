@@ -4,8 +4,6 @@ import SelectTeam from './components/SelectTeam'
 import { ProgressBar, ProgressMeter } from './components/ProgressBar'
 import { calculateTeamStats, getData, getTeams } from './util'
 
-const team222 = []
-
 function App() {
   const [teamA, setTeamA] = useState(null)
   const [teamB, setTeamB] = useState(null)
@@ -27,7 +25,7 @@ function App() {
       const {team1result, team2result, draw} = calculateTeamStats(await getData(teamA, teamB), teamA, teamB)
       setResponse(`Remisy: ${draw}`)
       setResults(results = {
-        sum: team1result + team2result,
+        sum: team1result + team2result + draw,
         teamAwin: team1result,
         teamBwin: team2result,
         draw: draw
