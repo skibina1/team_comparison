@@ -7,12 +7,12 @@ import '../style/SelectTeam.css'
 function SelectTeam(props) {
   const [team, setTeam] = useState(null)  
 
-  function itemRenderer(item, { handleClick }) {
+  function itemRenderer(item, { handleClick, modifiers, query }) {
     return (
       <MenuItem
-        key={item.team}
-        label={item.team}
-        text={item.team}
+        key={item.HOME_TEAM}
+        label={item.HOME_TEAM}
+        text={item.HOME_TEAM}
         onClick={handleClick}
         shouldDismissPopover={true}
       />
@@ -20,17 +20,29 @@ function SelectTeam(props) {
   }
 
   function handleClick(item) {
-    setTeam(item.team)
-    props.setTeam(item.team)
+    setTeam(item.HOME_TEAM)
+    props.setTeam(item.HOME_TEAM)
+  }
+
+  function filterTeams(query, team, _index, exactMatch) {
+    const normalizedTitle = team.HOME_TEAM.toLowerCase()
+    const normalizedQuery = query.toLowerCase()
+
+    if (exactMatch) {
+      return normalizedTitle === normalizedQuery
+    } else {
+      return `${team.HOME_TEAM}`.toLowerCase().indexOf(normalizedQuery) >= 0
+    }    
   }
 
   return (
     <div>
       <Select
         items={props.teams}
-        filterable={false}
+        filterable={true}
         itemRenderer={itemRenderer}
         onItemSelect={handleClick}
+        itemPredicate={filterTeams}
       >
         <Button
           className="select-button"

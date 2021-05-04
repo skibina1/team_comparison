@@ -7,6 +7,13 @@ async function getData(team1, team2) {
   return response
 }
 
+async function getTeams() {
+  let response = await fetch(HOST + 'matches/getTeams')
+    .then(response => response.json())
+    .then(res => { return res })
+  return response
+}
+
 function calculateTeamStats(matches, team1, team2){
   let team1win = 0, team2win = 0, draw = 0
   matches.forEach(match => {
@@ -27,4 +34,4 @@ function calculateTeamStats(matches, team1, team2){
   }
 }
 
-export { getData, calculateTeamStats }
+export { getData, calculateTeamStats, getTeams }

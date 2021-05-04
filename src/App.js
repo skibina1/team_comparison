@@ -2,13 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import SelectTeam from './components/SelectTeam'
 import { ProgressBar, ProgressMeter } from './components/ProgressBar'
-import { calculateTeamStats, getData } from './util'
-
-const teams = [
-  { team: 'Black Widow' },
-  { team: 'Young Lions'},
-  { team: 'Top Smokers Club Reprezentant'}
-]
+import { calculateTeamStats, getData, getTeams } from './util'
 
 function App() {
   const [teamA, setTeamA] = useState(null)
@@ -20,6 +14,11 @@ function App() {
     teamBwin: 0,
     draw: 0
   })
+  let [teams, setTeams] = useState([])
+
+  useEffect( async () => {
+    setTeams(teams = await getTeams())
+  }, [])
 
   useEffect( async () => {
     if(teamA && teamB){
