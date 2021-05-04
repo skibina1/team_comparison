@@ -36,12 +36,13 @@ function SelectTeam(props) {
         itemRenderer={itemRenderer}
         onItemSelect={handleClick}
         itemPredicate={filterTeams}
+        disabled={props.teams.length === 0 ? true : false}
       >
         <Button
           className="select-button"
           text={team == null ? 'Wybierz Zespół' : team}
           rightIcon="caret-down"
-          disabled={true}
+          disabled={props.teams.length === 0 ? true : false}
         />
       </Select>            
     </div>
