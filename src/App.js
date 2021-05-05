@@ -3,6 +3,7 @@ import './App.css'
 import SelectTeam from './components/SelectTeam'
 import { ProgressBar, ProgressMeter } from './components/ProgressBar'
 import { calculateTeamStats, getData, getTeams } from './util'
+import logo from './img/logo.jpg'
 
 function App() {
   const [teamA, setTeamA] = useState(null)
@@ -36,7 +37,11 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        KUPA
+        <img
+          src={logo}
+          alt="Logo"
+          className="logo"
+        />
       </div>
       <div className="main">
         <div className="left">

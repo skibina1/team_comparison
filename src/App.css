@@ -59,3 +59,8 @@ html, body, #root, .App{
   font-weight: 400; 
   padding-top: 10px; 
 }
+
+.logo {
+  width: 150px;
+  margin: 20px;
+}
