@@ -8,7 +8,7 @@ import logo from './img/logo.jpg'
 function App() {
   const [teamA, setTeamA] = useState(null)
   const [teamB, setTeamB] = useState(null)
-  const [response, setResponse] = useState(null)
+  const [draw, setDraw] = useState(null)
   let [results, setResults] = useState({
     sum: 0,
     teamAwin: 0,
@@ -24,7 +24,7 @@ function App() {
   useEffect( async () => {
     if(teamA && teamB){
       const {team1result, team2result, draw} = calculateTeamStats(await getData(teamA, teamB), teamA, teamB)
-      setResponse(`Remisy: ${draw}`)
+      setDraw(`Remisy: ${draw}`)
       setResults(results = {
         sum: team1result + team2result + draw,
         teamAwin: team1result,
@@ -68,7 +68,7 @@ function App() {
             </div>
             <div className="amount">{results.teamBwin}</div>
             <div></div>  
-            <div className="amount">{response}</div>  
+            <div className="amount">{draw}</div>  
             <div></div>
           </div>      
         </div>
