@@ -35,45 +35,46 @@ function App() {
   
   return (
     <div className="App">
-      <div>
-      </div>    
-      <div className="header-middle">
+      <div className="header">
         KUPA
       </div>
-      <div>
-      </div>
-      <div className="left">
-        <div>
-          <SelectTeam 
-            teams={teams}
-            setTeam={setTeamA}
-          /> 
-        </div>
-      </div>      
-      <div className="center">
-        <div className="progress-bar-container">
-          <div className="amount">{results.teamAwin}</div>
+      <div className="main">
+        <div className="left">
           <div>
-            <ProgressBar>
-              <ProgressMeter value={results.teamAwin/results.sum} color='orange'/>
-              <ProgressMeter value={results.draw/results.sum} color='#ced2d6' />
-              <ProgressMeter value={1 - (results.teamAwin+results.draw)/results.sum} color='blue' />
-            </ProgressBar>
+            <SelectTeam 
+              teams={teams}
+              setTeam={setTeamA}
+            /> 
           </div>
-          <div className="amount">{results.teamBwin}</div>
-          <div></div>  
-          <div className="amount">{response}</div>  
-          <div></div>
         </div>      
+        <div className="center">
+          <div className="progress-bar-container">
+            <div className="amount">{results.teamAwin}</div>
+            <div>
+              <ProgressBar>
+                <ProgressMeter value={results.teamAwin/results.sum} color='orange'/>
+                <ProgressMeter value={results.draw/results.sum} color='#ced2d6' />
+                <ProgressMeter value={1 - (results.teamAwin+results.draw)/results.sum} color='blue' />
+              </ProgressBar>
+            </div>
+            <div className="amount">{results.teamBwin}</div>
+            <div></div>  
+            <div className="amount">{response}</div>  
+            <div></div>
+          </div>      
+        </div>
+        <div className="right">
+          <div>
+            <SelectTeam 
+              teams={teams}
+              setTeam={setTeamB}
+            />     
+          </div> 
+        </div>
       </div>
-      <div className="right">
-        <div>
-          <SelectTeam 
-            teams={teams}
-            setTeam={setTeamB}
-          />     
-        </div> 
-      </div>      
+      <div>
+        FOOTER
+      </div>   
     </div>
   )
 }

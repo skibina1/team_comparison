@@ -8,14 +8,26 @@ html, body, #root, .App{
 
 .App {
   display: grid;
-
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .App {
-    grid-template-columns: 20% auto 20%;
-    grid-template-rows: 25% auto;
+    grid-template-columns: auto;
+    grid-template-rows: 15% auto 10%;
   }
+  .main{
+    grid-template-columns: 25% auto 25%
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .App {
+    grid-template-rows: 15% auto 15%;
+  }
+}
+
+.main{
+  display: grid;
 }
 
 .left{
@@ -32,15 +44,12 @@ html, body, #root, .App{
 
 .center{
   display: grid;
-  /* grid-template-columns: 1fr; */
-  /* grid-template-rows: 100vh; */
 }
 
 .progress-bar-container{
   display: grid;
   grid-template-columns: 15% auto 15%;
   width: 100%;
-  border-color: red;
   align-self: start;
   text-align: center;
 }
