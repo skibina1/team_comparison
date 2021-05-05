@@ -11,7 +11,7 @@ function SelectTeam(props) {
     return (
       <MenuItem
         key={item.HOME_TEAM}
-        label={item.HOME_TEAM}
+        // label={item.HOME_TEAM}
         text={item.HOME_TEAM}
         onClick={handleClick}
         shouldDismissPopover={true}
