@@ -42,6 +42,10 @@ function App() {
           alt="Logo"
           className="logo"
         />
+        <div className="empty-row"></div>
+        <span className="title">PORÓWNYWARKA DRUŻYN</span>
+        <div className="empty-row"></div>
+        <div className="empty-row"></div>
       </div>
       <div className="main">
         <div className="left">
