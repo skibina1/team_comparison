@@ -4,6 +4,7 @@ import SelectTeam from './components/SelectTeam'
 import { ProgressBar, ProgressMeter } from './components/ProgressBar'
 import { calculateTeamStats, getData, getTeams } from './util'
 import logo from './img/logo.jpg'
+import { REMARKS } from './texts/texts'
 
 function App() {
   const [teamA, setTeamA] = useState(null)
@@ -80,6 +81,8 @@ function App() {
             />     
           </div> 
         </div>
+        <div></div>
+        <div className='remarks'>{REMARKS}</div>
       </div>
       <div>
         FOOTER
