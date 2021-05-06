@@ -5,6 +5,7 @@ import { ProgressBar, ProgressMeter } from './components/ProgressBar'
 import { calculateTeamStats, getData, getTeams } from './util'
 import logo from './img/logo.jpg'
 import { REMARKS } from './texts/texts'
+import Footer from './components/Footer'
 
 function App() {
   const [teamA, setTeamA] = useState(null)
@@ -98,7 +99,7 @@ function App() {
         </div>
       </div>
       <div>
-        FOOTER
+        <Footer/>
       </div>   
     </div>
   )
