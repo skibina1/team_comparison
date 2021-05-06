@@ -17,6 +17,8 @@ function App() {
     draw: 0
   })
   let [teams, setTeams] = useState([])
+  let [teamResults, setTeamResults] = useState([])
+
 
   useEffect( async () => {
     setTeams(teams = await getTeams())
@@ -24,7 +26,9 @@ function App() {
 
   useEffect( async () => {
     if(teamA && teamB){
-      const {team1result, team2result, draw} = calculateTeamStats(await getData(teamA, teamB), teamA, teamB)
+      setTeamResults(teamResults = await getData(teamA, teamB)) 
+      console.log(teamResults)
+      const {team1result, team2result, draw} = calculateTeamStats(teamResults, teamA, teamB)
       setDraw(`Remisy: ${draw}`)
       setResults(results = {
         sum: team1result + team2result + draw,
@@ -71,6 +75,11 @@ function App() {
             <div></div>  
             <div className="amount">{draw}</div>  
             <div></div>
+          </div>
+          <div className="results">
+            {teamResults.map((teamResult, i) =>
+              <div key={i}>{teamResult.HOME_TEAM} {teamResult.HOME_RESULT} : {teamResult.AWAY_RESULT} {teamResult.AWAY_TEAM} {teamResult.SEASON}</div> 
+            )}
           </div>      
         </div>
         <div className="right">
@@ -82,7 +91,11 @@ function App() {
           </div> 
         </div>
         <div></div>
-        <div className='remarks'>{REMARKS}</div>
+        <div className='remarks'>
+          {REMARKS.map((remark, i) =>
+            <div key={i}>{remark}</div> 
+          )}
+        </div>
       </div>
       <div>
         FOOTER

@@ -1,3 +1,7 @@
-const REMARKS = 'długi tekstdługi tekstdługi tekstdługi tekstdługi tekstdługi tekstdług AAAA asd tekstdługi tekstdługi tekstdługi tekstdługi tekstdługi tekst'
+const REMARKS = [ 
+  'Nie uwzględione są wyniki z sezonu 00, 06(oprócz Ekstraligi), 07, 08, 09',
+  'Nie uwzględione są wyniki z bieżącego sezonu'
+]
+
 
 export { REMARKS }
