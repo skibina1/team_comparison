@@ -84,4 +84,6 @@ html, body, #root, .App{
 .results {
   text-align: center;
 }
-
+.result {
+  padding: 5px;
+}

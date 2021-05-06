@@ -28,7 +28,6 @@ function App() {
   useEffect( async () => {
     if(teamA && teamB){
       setTeamResults(teamResults = await getData(teamA, teamB)) 
-      console.log(teamResults)
       const {team1result, team2result, draw} = calculateTeamStats(teamResults, teamA, teamB)
       setDraw(`Remisy: ${draw}`)
       setResults(results = {
@@ -79,7 +78,7 @@ function App() {
           </div>
           <div className="results">
             {teamResults.map((teamResult, i) =>
-              <div key={i}>{teamResult.HOME_TEAM} {teamResult.HOME_RESULT} : {teamResult.AWAY_RESULT} {teamResult.AWAY_TEAM} {teamResult.SEASON}</div> 
+              <div key={i} className='result'>{teamResult.HOME_TEAM} {teamResult.HOME_RESULT} : {teamResult.AWAY_RESULT} {teamResult.AWAY_TEAM} {teamResult.SEASON}</div> 
             )}
           </div>      
         </div>
