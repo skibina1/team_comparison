@@ -3,6 +3,8 @@ const HOST = 'https://team-comparison-db-api.herokuapp.com/'
 async function getData(team1, team2) {
   team1 = team1.replace('%', '%25')
   team2 = team2.replace('%', '%25')
+  team1 = team1.replace('#', '%23')
+  team2 = team2.replace('#', '%23')
   console.log(team1, team2)
   let response = await fetch(HOST + 'matches/select?team1='+team1+'&team2='+team2)
     .then(response => response.json())
